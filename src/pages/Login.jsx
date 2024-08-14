@@ -65,6 +65,8 @@ const Login = () => {
       toast.error(error?.response?.data?.message || "Something Went Wrong", {
         id: toastId,
       });
+
+      console.log(error?.response?.data);
     } finally {
       setIsLoading(false);
     }
