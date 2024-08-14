@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { userExists, userNotExists } from "./redux/reducers/auth";
 import { Toaster } from "react-hot-toast";
 import { SocketProvider } from "./socket";
+import runOneSignal from "./utils/oneSignal";
 
 const Home = lazy(() => import("./pages/Home"));
 const Login = lazy(() => import("./pages/Login"));
@@ -27,6 +28,11 @@ const App = () => {
   const { user, loader } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log("OneSignal");
+    runOneSignal();
+  });
 
   useEffect(() => {
     axios
