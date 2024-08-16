@@ -29,10 +29,10 @@ const App = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    console.log("OneSignal");
-    runOneSignal();
-  });
+  // useEffect(() => {
+  //   console.log("OneSignal");
+  //   runOneSignal();
+  // });
 
   useEffect(() => {
     axios
