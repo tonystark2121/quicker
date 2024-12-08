@@ -1,10 +1,4 @@
-import React, {
-  Fragment,
-  useCallback,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { Fragment, useCallback, useEffect, useRef, useState } from "react";
 import AppLayout from "../components/layout/AppLayout";
 import { IconButton, Skeleton, Stack } from "@mui/material";
 import { grayColor, orange } from "../constants/color";
@@ -96,7 +90,9 @@ const Chat = ({ chatId, user }) => {
     if (!message.trim()) return;
 
     // Emitting the message to the server
+
     socket.emit(NEW_MESSAGE, { chatId, members, message });
+    console.log(socket);
     setMessage("");
   };
 
